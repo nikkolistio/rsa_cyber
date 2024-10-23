@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AES Encryption/Decryption</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        input[type="text"], input[type="password"], textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            background-color: #f8f9fa;
+            padding: 10px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>AES Encryption/Decryption</h1>
+    <form method="POST">
+        <label for="text">Teks:</label>
+        <textarea id="text" name="text" rows="4" required></textarea>
+
+        <label for="key">Key (16, 24, atau 32 karakter):</label>
+        <input type="password" id="key" name="key" required>
+
+        <input type="submit" name="action" value="encrypt">
+        <input type="submit" name="action" value="decrypt">
+    </form>
+
+    {% if result %}
+    <div class="result">
+        <h3>Hasil:</h3>
+        <p>{{ result }}</p>
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
